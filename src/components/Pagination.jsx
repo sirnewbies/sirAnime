@@ -1,8 +1,4 @@
-import { useRouter } from "next/navigation"
-
-const Pagination = ({ apii, data, route, lastPage, setPage}) => {
-
-    const router = useRouter
+const Pagination = ({ page, lastPage, setPage}) => {
 
     const scrollTop = () => {
         scrollTo({
@@ -11,20 +7,37 @@ const Pagination = ({ apii, data, route, lastPage, setPage}) => {
         })
     }
 
-    const nextPage = () => {
-        router.push(`${apii}/${route}/?page=${data}` + 1)
+    const handleNextPage = () => {
+        setPage((prevState => prevState + 1))
         scrollTop()
     }
 
-    const handleNextPage = () => {
-        setPage((prevstate))
+    const handlePrevPage = () => {
+        setPage((prevState => prevState - 1))
+        scrollTop()
     }
 
     return(
         <div className="flex justify-center items-center py-4 px-2 gap-4">
-            <button>Prev</button>
-            <p>{data}</p>
-            <button onClick={nextPage}>Next</button>
+
+        {page <= 1 ? null :
+            <button 
+            onClick={handlePrevPage}
+            className="hover:text-zinc-400 transition-all"
+            >
+                Prev
+            </button>
+        }
+            <p>{page} dari {lastPage}</p>
+
+        {page >= lastPage ? null :
+            <button 
+            onClick={handleNextPage}
+            className="hover:text-zinc-400 transition-all"
+            >
+                Next
+            </button>
+        }
         </div>
     )
 }

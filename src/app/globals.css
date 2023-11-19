@@ -74,3 +74,30 @@ body {
 .card-type {
   @apply absolute top-0 right-0 bg-yellow-700 bg-opacity-90 text-zinc-200 p-1 rounded-md;
 }
+
+.loading {
+  width:50px;
+  height:50px;
+  --c:radial-gradient(farthest-side,var(--color-primary-light) 92%,#0000);
+  background: 
+    var(--c) 50% 0,
+    var(--c) 50% 100%,
+    var(--c) 100% 50%,
+    var(--c) 0    50%;
+  background-size:12px 12px;
+  background-repeat:no-repeat;
+  animation:s7 1s infinite;
+}
+@keyframes s7 {to{transform: rotate(.5turn)}}
+
+.anime-title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-line-clamp: 3; /* Maksimal 3 baris */
+  -webkit-box-orient: vertical;
+  max-height: 3em; /* Set maksimal tinggi */
+  overflow: hidden;
+}

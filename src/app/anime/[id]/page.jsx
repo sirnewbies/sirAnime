@@ -6,7 +6,6 @@ import Link from "next/link"
 
 const Page = async({ params : {id} }) => {
     const anime = await getAnimeResponse(`anime/${id}`)
-    console.log(anime)
 
     const episodes = [];
 

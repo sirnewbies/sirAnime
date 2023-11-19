@@ -20,8 +20,8 @@ const Card = ({ api }) => {
                             ▶
                         </div>
 
-                        <div className="w-full absolute bottom-0 h-[20%] P-2 px-2 py-2 mssm:py-0 mxsm:py-2">
-                            <h2>{anime.title}</h2>
+                        <div className="w-full absolute bottom-0 h-[20%] P-2 px-2 py-0 md:py-2">
+                            <h2 className="anime-title text-sm md:text-[1rem]">{anime.title}</h2>
                         </div>
 
                         <div className="card-star">
@@ -33,6 +33,7 @@ const Card = ({ api }) => {
                         <div className="card-type">
                             <p className="font-semibold text-[.9rem]">
                                 {anime.episode}
+                                {anime.type}
                             </p>
                         </div>
                     </Link>

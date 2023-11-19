@@ -1,5 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
+import InputSearch from "./InputSearch";
 
 const Navbar = () => {
     return(
@@ -8,20 +9,11 @@ const Navbar = () => {
                 <nav>
                     <div className="sm:flex justify-between items-center flex-wrap block">
                         <div className="brand py-4">
-                            <a href="/" className="text-white text-2xl font-bold ">
+                            <a href="/" className="text-white text-2xl font-bold underline">
                                 sirAnimeIndo
                             </a>
                         </div>
-                        <form className="relative flex items-center py-4">
-                            <input 
-                            type="text" 
-                            placeholder="Cari anime..."
-                            className="px-3 py-2 rounded-md ring-1 ring-zinc-200  focus:ring-2 w-full"
-                            />
-                            <div className="absolute right-0 mx-1 text-xl cursor-pointer">
-                            🔍
-                            </div>
-                        </form>
+                        <InputSearch/>
                     </div>
                     <div className="flex justify-center items-center">
                         <ul className="grid text-white lg:grid-cols-8 gap-4 mlg:grid-cols-6 grid-cols-3 py-4">
@@ -40,7 +32,7 @@ const Navbar = () => {
                                     Tamat
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link href="/anime" className="navbar-list">
                                     Semua
                                 </Link>
@@ -49,7 +41,7 @@ const Navbar = () => {
                                 <Link href="/movie" className="navbar-list">
                                     Movie
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link href="/genre" className="navbar-list">
                                     Genre

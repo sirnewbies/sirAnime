@@ -6,7 +6,7 @@ import getAnimeResponse from '@/libs/api-libs';
 
 const Page = async() => {
   const thisPage = 1
-  const endPoint = "ongoing"
+  const endPoint = "home"
   const beranda = await getAnimeResponse(`${endPoint}`, `page=${thisPage}`)
 
   return(
