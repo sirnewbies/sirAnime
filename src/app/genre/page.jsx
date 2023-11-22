@@ -12,7 +12,7 @@ const Page = async() => {
         <Navbar/>
         <div className="px-4">
             <Header route={`Genre`}/>
-            <div className="grid gap-4 grid-cols-6 mxl:grid-cols-4 mlg:grid-cols-3 msm:grid-cols-2 mxsm:grid-cols-1">
+            <div className="grid gap-4 md:grid-cols-6 grid-cols-2">
                 {genre.list?.map((item, index) => (
                     <Link
                     className="w-full bg-zinc-700 p-4 rounded-md hover:ring-2 hover:ring-emerald-500 transition"

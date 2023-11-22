@@ -1,17 +1,16 @@
-const SelectEpisode = ( {slug, episodes} ) => {
+"use client"
+
+import { useRouter } from "next/navigation"
+import Header from "./Header"
+import { withRouter } from "next/router"
+
+const SelectEpisode = () => {
+
+    const router = useRouter()
+    const {slug, episodes} = router.query
     return(
-        <select 
-        id="select-episode"
-        className="p-2 inline-block rounded-md bg-zinc-900 ring-2 ring-sky-800"
-        >
-            <option value="">Episode</option>
-            {/* {episodes.map((item, index) => (
-                <option value={`/anime/${slug}/${item}`} key={index}>
-                    Episode {item}
-                </option>
-            ))} */}
-        </select>
+        <Header route={`episode ${episodes}`}/>
     )
 }
 
-export default SelectEpisode
+export default withRouter(SelectEpisode)

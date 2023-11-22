@@ -5,6 +5,7 @@ import getAnimeResponse from "@/libs/api-libs"
 import Link from "next/link"
 
 const Page = async({ params : {id} }) => {
+
     const anime = await getAnimeResponse(`anime/${id}`)
 
     const episodes = [];
