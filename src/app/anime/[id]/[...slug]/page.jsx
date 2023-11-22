@@ -15,6 +15,7 @@ const Page = ({ params: { id, slug } }) => {
       const animeData = await getAnimeResponse(`anime/${id}/${slug}`);
       setEpisode(animeData);
       setVideoLink(animeData.videoPlayer[`${slug}`].url);
+      console.log(animeData)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
